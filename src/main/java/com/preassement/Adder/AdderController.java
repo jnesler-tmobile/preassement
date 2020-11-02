@@ -18,7 +18,7 @@ public class AdderController{
                 
         int result = performMath.addValues(value1, value2);
         
-        return new ResponseEntity<>("{\"sum\" : " + result + "}", HttpStatus.OK);
+        return new ResponseEntity<>("The sume of "+ value1 + " and "+ value2 + " is " + result + "}", HttpStatus.OK);
     }
     
 }

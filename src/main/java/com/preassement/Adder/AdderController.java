@@ -9,14 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AdderController{
 
+    
     private final PerformMath performMath = new PerformMath();
 
     @GetMapping(value="/add/{value1}/{value2}")
     ResponseEntity<String>
      getSum(@PathVariable int value1, @PathVariable int value2) throws NumberFormatException {
-        //check that user didn't send us letters
+                
         int result = performMath.addValues(value1, value2);
-
+        
         return new ResponseEntity<>("{\"sum\" : " + result + "}", HttpStatus.OK);
     }
     
